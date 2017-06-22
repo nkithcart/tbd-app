@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo install started on `date`
-      - npm install @angular/cli 
+      - npm install -g @angular/cli 
   pre_build:
     commands:
       - echo pre-build started on `date`
