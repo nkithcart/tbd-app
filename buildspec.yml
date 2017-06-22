@@ -3,9 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Nothing to do in the install phase...
+      - echo install started on `date`
+      - npm install -g @angular/cli 
   pre_build:
     commands:
+      - echo pre-build started on `date`
       - npm install -g
   build:
     commands:
@@ -13,7 +15,7 @@ phases:
       - ng build
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo post-build completed on `date`
       - aws s3 sync dist/ "s3://http://app.tbd-app.s3-website-us-east-1.amazonaws.com"
 artifacts:
   base-directory: dist
