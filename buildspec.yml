@@ -16,6 +16,6 @@ phases:
   post_build:
     commands:
       - echo post-build completed on `date`
-      - aws s3 sync dist/ "s3://app.tbd-app"
+      - aws s3 sync dist/ "s3://tbd-app"
 artifacts:
   base-directory: dist
