@@ -30,12 +30,10 @@
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
-function statusChangeCallback(response){
-	console.log("hit status change callback");
+  if (response.status === 'connected') {
+    console.log(response.authResponse.accessToken);
+  }
+});
 }
 
 </script>
